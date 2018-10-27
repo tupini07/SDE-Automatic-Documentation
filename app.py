@@ -9,6 +9,51 @@ import os
 app = Flask(__name__)
 
 
+@app.route("/post/<int:post_id>", methods=["GET"])
+def get_specific_post(post_id):
+    """Return information on a specific post.
+
+    .. :quickref: Get specific post; Gets the information about a specific potst.
+
+    **Example request:**
+
+    .. sourcecode:: http
+
+        GET /post/post_id HTTP/1.1
+        Host: example.com
+        Accept: application/json
+    
+
+    **Example response:**
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        Content-Type: application/json
+
+        {
+            "post_id": 123123,
+            "author": "/author/123/",
+            "tags": ["python3", "typehints", "annotations"],
+            "title": "To typehint or not to typehint that is the question",
+            "body": "Static checking in python..."
+        }
+
+    :query post_id: The id of the post we want to get specific information of
+    :status 200: post found
+    :status 404: post with given id not found
+    """
+    return json.dumps({
+        "post_id": post_id,
+        "author": "/author/123/",
+        "tags": ["python3", "typehints", "annotations"],
+        "title": "To typehint or not to typehint that is the question",
+        "body": "Static checking in python..."
+    })
+
+
+
 @app.route('/posts', methods=['GET'])
 def get_posts():
     """Return collection of posts.
@@ -104,9 +149,7 @@ def create_post():
     :resheader Content-Type: application/json
     :status 201: post created
     """
-    return json.dumps([
-        {"post_id": 23213}
-    ])
+    return json.dumps({"post_id": 23213})
 
 
 # ======== Main ============================================================== #

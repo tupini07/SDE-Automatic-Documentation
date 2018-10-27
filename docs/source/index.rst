@@ -5,7 +5,7 @@
 
 .. toctree::
     :maxdepth: 2
-    :caption: Table of contents
+    :caption: Other pages:
     
     extradoc
 
