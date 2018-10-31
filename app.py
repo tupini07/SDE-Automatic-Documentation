@@ -19,7 +19,7 @@ def get_specific_post(post_id):
 
     .. sourcecode:: http
 
-        GET /post/post_id HTTP/1.1
+        GET /post/123123 HTTP/1.1
         Host: example.com
         Accept: application/json
     
