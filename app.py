@@ -32,11 +32,7 @@ def get_specific_todo(todo_id):
 
     .. sourcecode:: http
 
-<<<<<<< HEAD
         GET /todo/4278 HTTP/1.1
-=======
-        GET /post/123123 HTTP/1.1
->>>>>>> 5d8184718ec5e72919f18f6ef479522a271912db
         Host: example.com
         Accept: application/json
 
