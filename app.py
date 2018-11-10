@@ -151,6 +151,9 @@ def create_todo():
     
     else: 
         new_id = random.randint(1000, 9999) # note: naivley create random ID
+        while new_id in todo_db.keys(): # very unlikely, but this ensures that there are no duplicate ids
+            new_id = random.randint(1000, 9999) 
+            
         todo_db[new_id] = request.form.get("text") # create todo in DB with specified tet
         return json.dumps({"id": new_id}), 201 # return new id:todo, successfully created
 
