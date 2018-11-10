@@ -21,10 +21,3 @@ here's a bit of math for you
    (a + b)^2 = a^2 + 2ab + b^2
 
    (a - b)^2 = a^2 - 2ab + b^2
-
-
-some link? using ref, going directly to title in new page: :ref:`this_is_the_name_of_the_page`
-
-or with doc :doc:`otherdoc`
-
-

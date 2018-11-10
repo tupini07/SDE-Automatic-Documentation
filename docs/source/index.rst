@@ -7,7 +7,7 @@
     :maxdepth: 2
     :caption: Other pages:
     
-    extradoc
+    anotherdoc
 
 My documentation!
 =======================================
