@@ -9,12 +9,13 @@
     
     directives_example
 
-My documentation!
+Automatic API Documentation with Sphinx
 =======================================
 
 
 .. qrefflask:: app:app
    :undoc-static:
+
 
 =======================================
 Api details!

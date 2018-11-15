@@ -11,3 +11,5 @@ To build the documentation `cd` to the `docs` folder and run:
 ```
 make html
 ```
+
+To publish the documentation make sure you have an account on `surge.sh`, modify the `docs/CNAME` file so that it has whatever domain URL you would like to use, and then from `docs/` execute `make publish`. 
