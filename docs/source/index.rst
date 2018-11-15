@@ -7,7 +7,7 @@
     :maxdepth: 2
     :caption: Other pages:
     
-    anotherdoc
+    directives_example
 
 My documentation!
 =======================================
