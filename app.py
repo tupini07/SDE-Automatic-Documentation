@@ -14,7 +14,6 @@ todo_db = {  # todo  map, id:text
     2952: "Do some exercise"
 }
 
-
 @app.after_request
 def apply_caching(response):
     response.headers["Content-Type"] = "application/json"
