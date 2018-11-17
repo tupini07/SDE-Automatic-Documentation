@@ -21,5 +21,6 @@ To publish the documentation make sure you have an account on `surge.sh`, modify
 - Python 3.6 and project requirements
 - TexLive, and latexmk (https://latextools.readthedocs.io/en/latest/install/#linux) for PDF generation
     - Need to test that both are actually compiling correctly
+- surge for uploading to live
 - Some browser
 - Some editor
