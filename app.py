@@ -55,10 +55,10 @@ def get_specific_todo(todo_id):
     :status 404: todo with given id not found
     """
 
-    if todo_id in todo_db.keys():
+    if todo_id in todo_db.keys(): # if we have the todo with the specified ID in our database then return it
         return json.dumps({"id": todo_id, "text": todo_db[todo_id]}), 200
 
-    else:
+    else: # if the specified todo was not found then return not found error
         return json.dumps({"error": "ToDo not found."}), 404
 
 
@@ -101,13 +101,15 @@ def get_todos():
     :status 400: If `sort` parameter is not valid
     """
 
-    sortdir = request.args.get("sort", "asc")
+    sortdir = request.args.get("sort", "asc") # Check if a `sort` get parameter was specified, if yes then use it, else use `asc`
 
-    if sortdir not in ["desc", "asc"]:
+    if sortdir not in ["desc", "asc"]: # check that specified `sort` parameter is in the accepted set, if not return error
         return json.dumps({"error": "Sort parameter is invalid, must be either `asc` or `desc`"}), 400
 
+    # sort todos
     ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
 
+    # return list of sorted todos
     return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids))
 
 
@@ -153,7 +155,7 @@ def create_todo():
         while new_id in todo_db.keys(): # very unlikely, but this ensures that there are no duplicate ids
             new_id = random.randint(1000, 9999) 
             
-        todo_db[new_id] = request.form.get("text") # create todo in DB with specified tet
+        todo_db[new_id] = request.form.get("text") # create todo in DB with specified text
         return json.dumps({"id": new_id}), 201 # return new id:todo, successfully created
 
 
