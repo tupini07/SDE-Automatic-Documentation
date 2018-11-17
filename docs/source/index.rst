@@ -1,16 +1,17 @@
-.. testflask documentation master file, created by
-   sphinx-quickstart on Sun Oct 21 15:26:04 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 .. toctree::
     :maxdepth: 2
     :caption: Other pages:
-    
+
     directives_example
 
 Automatic API Documentation with Sphinx
 =======================================
+
+
+.. 
+    Note that :undoc-static: simply means that
+    we don't want to document funcitons that don't to anything
+    (that only return a static file).
 
 
 .. qrefflask:: app:app

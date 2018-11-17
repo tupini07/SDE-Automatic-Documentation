@@ -1,7 +1,7 @@
 Example Directives
 ==================
 
-Ths is just a demonstration of the most common directives. For a complete list check `this page <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-directives>`_  for basic ``rst`` directives or `this other page <http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_ for more advanced sphinx directives. 
+Ths is just a demonstration of the most common directives. For a complete list check `this page <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-directives>`_  for basic ``rst`` directives or `this other page <http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html>`_ for more advanced sphinx directives.
 
 Basic Directives
 ################
@@ -18,7 +18,7 @@ Basic Text formatting
 
 
 Lists
-***** 
+*****
 
 Normal list
 
@@ -56,18 +56,18 @@ Automatic numbering is also supported
 .. code-block:: rst
 
     #. hi
-    #. how 
-    #. are 
+    #. how
+    #. are
     #. you
 
 
 #. hi
-#. how 
-#. are 
+#. how
+#. are
 #. you
 
 
-Term Definition 
+Term Definition
 ***************
 
 .. code-block:: rst
@@ -110,7 +110,7 @@ As you can see in this document, each section is separated by a *heading*. To de
 
     =================
     Heading example
-    =================    
+    =================
 
 
 Normally, there are no heading levels assigned to certain characters as the structure is determined from the succession of headings. However, this convention is used in `Python’s Style Guide <https://docs.python.org/devguide/documenting.html#style-guide>`_ for documenting which you may follow:
@@ -131,7 +131,7 @@ More "Advanced" directives
 Code block
 **********
 
-This directive is used to highlight code, note that we can pass the name of the language as a parameter. 
+This directive is used to highlight code, note that we can pass the name of the language as a parameter.
 
 .. code-block:: rst
 
@@ -154,7 +154,7 @@ Block Messages
     .. warning::
         for example, here you are being warned
 
-    .. note:: 
+    .. note::
         This is letting you know something
 
     .. seealso::
@@ -163,7 +163,7 @@ Block Messages
 .. warning::
     for example, here you are being warned
 
-.. note:: 
+.. note::
     This is letting you know something
 
 .. seealso::
@@ -173,11 +173,11 @@ Block Messages
 Math
 ****
 
-You can define some math inline :math:`a^2 + b^2 = c^2` or you can define it as a block. 
+You can define some math inline :math:`a^2 + b^2 = c^2` or you can define it as a block.
 
 .. code-block:: rst
 
-    You can define some math inline :math:`a^2 + b^2 = c^2` 
+    You can define some math inline :math:`a^2 + b^2 = c^2`
 
 .. code-block:: rst
 
@@ -251,6 +251,5 @@ Table of Contents
     .. toctree::
         :maxdepth: 2
         :caption: Other pages:
-        
+
         directives_example
- 
