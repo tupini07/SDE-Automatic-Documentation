@@ -14,20 +14,36 @@ help:
 	@echo -e "\t - sphinx-help : displays all the targets that can be built with this make file"
 	@echo -e "\t - run-server : Runs the flask server"
 	@echo -e "\t - publish : publishes docs to surge"
+	@echo -e "\t - unpublish : deletes the page you hosted on the CNAME domain from surge servers"
 	@echo 
 	@echo "Everything else (make html, make latex, etc) are passed directly as commands to sphinx"
 
 sphinx-help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-publish:
-	@make html
+
+publish: html
 	@echo 
-	@echo "Publishing....."
-	@echo "Note that you need to have `surge` installed and on your PATH."
-	@echo "And you also need to add the domain you want to docs/CNAME"
+	@echo ---------------------------------------------------------------
+	@echo Publishing.....
+	@echo Note that you need to have 'surge' installed and on your PATH.
+	@echo And you also need to add the domain you want to docs/CNAME
+	@echo ---------------------------------------------------------------
 	@echo 
-	@cd docs && cp ./CNAME build/htm && surge ./build/html
+	cp docs/CNAME docs/build/html/ 
+	surge docs/build/html
+
+
+unpublish:
+	@echo 
+	@echo ---------------------------------------------------------------
+	@echo Unpublishing.....
+	@echo Note that you need to have 'surge' installed and on your PATH.
+	@echo And you also need to add the domain you want to delete to docs/CNAME
+	@echo ---------------------------------------------------------------
+	@echo 
+	cat docs/CNAME | surge teardown 
+
 
 
 # Catch-all target: route all unknown targets to Sphinx using the new
