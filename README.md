@@ -19,8 +19,9 @@ To publish the documentation make sure you have an account on `surge.sh`, modify
 
 - Postman
 - Python 3.6 and project requirements
-- TexLive, and latexmk (https://latextools.readthedocs.io/en/latest/install/#linux) for PDF generation
+- [TexLive, and latexmk](https://latextools.readthedocs.io/en/latest/install/#linux) for PDF generation
     - Need to test that both are actually compiling correctly
 - surge for uploading to live
+    - Maybe add slides on how to [login](https://www.npmjs.com/package/surge) to surge? 
 - Some browser
 - Some editor
