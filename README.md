@@ -25,3 +25,4 @@ To publish the documentation make sure you have an account on `surge.sh`, modify
     - Maybe add slides on how to [login](https://www.npmjs.com/package/surge) to surge? 
 - Some browser
 - Some editor
+- Check if on VM it is necessary to delete docs/build folder for changes to app.py to be loaded
