@@ -13,7 +13,7 @@ Basic Text formatting
 *********************
 
 .. code-block:: rst
-    
+
     * one asterisk: *text* for emphasis (italics),
     * two asterisks: **text** for strong emphasis (boldface), and
     * backquotes: ``text`` for code samples.
@@ -99,11 +99,11 @@ next term
 Normal Links
 *************
 
-You can define links directly in the body, for example: `this page <https://sites.google.com/unitn.it/introsde2018-19>`_
+You can define links directly in the body, for example: `this inline link <https://sites.google.com/unitn.it/introsde2018-19>`_
 
 .. code-block:: rst
 
-     You can define links directly in the body, for example: `this page <https://sites.google.com/unitn.it/introsde2018-19>`_
+     Some text `inline page <https://sites.google.com/unitn.it/introsde2018-19>`_
 
 
 
