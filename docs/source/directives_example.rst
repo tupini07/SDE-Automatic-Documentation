@@ -12,6 +12,13 @@ These are directives for everyday use, mainly text formatting and similar
 Basic Text formatting
 *********************
 
+.. code-block:: rst
+    
+    * one asterisk: *text* for emphasis (italics),
+    * two asterisks: **text** for strong emphasis (boldface), and
+    * backquotes: ``text`` for code samples.
+
+
 * one asterisk: *text* for emphasis (italics),
 * two asterisks: **text** for strong emphasis (boldface), and
 * backquotes: ``text`` for code samples.
@@ -87,6 +94,17 @@ term (up to a line of text)
 
 next term
    Description.
+
+
+Normal Links
+*************
+
+You can define links directly in the body, for example: `this page <https://sites.google.com/unitn.it/introsde2018-19>`_
+
+.. code-block:: rst
+
+     You can define links directly in the body, for example: `this page <https://sites.google.com/unitn.it/introsde2018-19>`_
+
 
 
 Special Links
