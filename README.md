@@ -25,4 +25,8 @@ To publish the documentation make sure you have an account on `surge.sh`, modify
     - Maybe add slides on how to [login](https://www.npmjs.com/package/surge) to surge? 
 - Some browser
 - Some editor
+    - and extension for rst files
 - Check if on VM it is necessary to delete docs/build folder for changes to app.py to be loaded
+- Install some default themes besides RTD and alabaster
+- Add slide with flask docstring
+- VM autologin

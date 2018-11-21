@@ -11,13 +11,19 @@ app = Flask(__name__)
 todo_db = {  # todo  map, id:text
     1429: "Buy milk",
     3821: "Walk my dog",
-    2952: "Do some exercise"
+    2952: "Do some exercise",
+    3019: "Destroy the one ring",
 }
 
 @app.after_request
 def apply_caching(response):
     response.headers["Content-Type"] = "application/json"
     return response
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return json.dumps({"error": "requested resource does not exist on server"}), 404
 
 #######################################################################################
 
