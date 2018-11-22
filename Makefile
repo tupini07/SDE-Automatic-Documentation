@@ -10,13 +10,14 @@ BUILDDIR      = build
 # Put it first so that "make" without argument is like "make help".
 help:
 	@echo Available commands:
-	@echo -e "\t - help : displays this message"
-	@echo -e "\t - sphinx-help : displays all the targets that can be built with this make file"
-	@echo -e "\t - run-server : Runs the flask server"
-	@echo -e "\t - publish : publishes docs to surge"
-	@echo -e "\t - unpublish : deletes the page you hosted on the CNAME domain from surge servers"
 	@echo 
-	@echo "Everything else (make html, make latex, etc) are passed directly as commands to sphinx"
+	@echo --- help : displays this message
+	@echo --- sphinx-help : displays all the targets that can be built with this make file
+	@echo --- run-server : Runs the flask server
+	@echo --- publish : publishes docs to surge
+	@echo --- unpublish : deletes the page you hosted on the CNAME domain from surge servers
+	@echo 
+	@echo "Everything else (ake html, make latex, etc) are passed directly as commands to sphinx"
 
 sphinx-help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
