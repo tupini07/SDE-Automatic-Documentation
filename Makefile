@@ -16,6 +16,7 @@ help:
 	@echo --- run-server : Runs the flask server
 	@echo --- publish : publishes docs to surge
 	@echo --- unpublish : deletes the page you hosted on the CNAME domain from surge servers
+	@echo --- clean : remove build data
 	@echo 
 	@echo "Everything else (ake html, make latex, etc) are passed directly as commands to sphinx"
 
@@ -45,9 +46,10 @@ unpublish:
 	@echo 
 	cat docs/CNAME | surge teardown 
 
+clean: 
+	@rm -rf docs/build
 
-html:
-	@rm -rf docs/build 
+html: clean
 	@cd docs && $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
