@@ -12,21 +12,16 @@ To build the documentation `cd` to the `docs` folder and run:
 make html
 ```
 
-To publish the documentation make sure you have an account on `surge.sh`, modify the `docs/CNAME` file so that it has whatever domain URL you would like to use, and then from `docs/` execute `make publish`. 
+To publish the documentation make sure you have [surge](https://surge.sh) installed: modify the `docs/CNAME` file so that it has whatever domain URL you would like to use, and then from `docs/` execute `make publish`. 
 
 
-## VM needs to have
+## Checklist for VM
 
-- Postman
-- Python 3.6 and project requirements
-- [TexLive, and latexmk](https://latextools.readthedocs.io/en/latest/install/#linux) for PDF generation
-    - Need to test that both are actually compiling correctly
-- surge for uploading to live
-    - Maybe add slides on how to [login](https://www.npmjs.com/package/surge) to surge? 
-- Some browser
-- Some editor
-    - and extension for rst files
-- Check if on VM it is necessary to delete docs/build folder for changes to app.py to be loaded
-- Install some default themes besides RTD and alabaster
-- Add slide with flask docstring
-- VM autologin
+- [x] Postman
+- [x] Python 3.6 and project requirements
+- [x] [TexLive, and latexmk](https://latextools.readthedocs.io/en/latest/install/#linux) for PDF generation
+- [x] surge for uploading to live
+- [x] Browser
+- [x] VM autologin
+
+
