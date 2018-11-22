@@ -46,11 +46,13 @@ unpublish:
 	cat docs/CNAME | surge teardown 
 
 
+html:
+	@rm -rf docs/build 
+	@cd docs && $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: 
 	@# we're removing docs/build to en7sure that all the changes are loaded. Depending on OS this
 	@# might not always be the case by default
-	@rm -rf docs/build 
 	@cd docs && $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
