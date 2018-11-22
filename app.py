@@ -114,9 +114,10 @@ def get_todos():
 
     # sort todos
     ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
+    return_code = 200 if len(todo_db.keys()) > 0 else 204
 
     # return list of sorted todos
-    return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids))
+    return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids)), return_code
 
 
 @app.route('/todos', methods=['POST'])
