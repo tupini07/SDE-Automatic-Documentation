@@ -12,7 +12,7 @@ todo_db = {  # todo  map, id:text
     1429: "Buy milk",
     3821: "Walk my dog",
     2952: "Do some exercise",
-    3019: "Destroy the one ring",
+    3019: "Destroy the One ring",
 }
 
 @app.after_request
@@ -28,7 +28,7 @@ def page_not_found(e):
 #######################################################################################
 
 
-@app.route("/todo/<int:todo_id>", methods=["GET"])
+@app.route("/todos/<int:todo_id>", methods=["GET"])
 def get_specific_todo(todo_id):
     """Return information on a specific ToDo item.
 
@@ -38,8 +38,8 @@ def get_specific_todo(todo_id):
 
     .. sourcecode:: http
 
-        GET /todo/4278 HTTP/1.1
-        Host: example.com
+        GET /todos/4278 HTTP/1.1
+        Host: http://tupini07.pythonanywhere.com
         Accept: application/json
 
 
@@ -79,7 +79,7 @@ def get_todos():
     .. sourcecode:: http
 
         GET /todos HTTP/1.1
-        Host: example.com
+        Host: http://tupini07.pythonanywhere.com
         Accept: application/json
 
     **Example response**:
@@ -119,7 +119,7 @@ def get_todos():
     return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids))
 
 
-@app.route('/todo', methods=['POST'])
+@app.route('/todos', methods=['POST'])
 def create_todo():
     """Create a new ToDo.
 
@@ -130,7 +130,7 @@ def create_todo():
     .. sourcecode:: http
 
         POST /todos HTTP/1.1
-        Host: example.com
+        Host: http://tupini07.pythonanywhere.com
         Accept: application/json
 
         {
@@ -165,7 +165,7 @@ def create_todo():
         return json.dumps({"id": new_id}), 201 # return new id:todo, successfully created
 
 
-@app.route("/todo/<int:todo_id>", methods=["PUT"])
+@app.route("/todos/<int:todo_id>", methods=["PUT"])
 def update_specific_todo(todo_id):
 
     if todo_id not in todo_db.keys(): # If the specified ID doesn't exist
@@ -177,12 +177,12 @@ def update_specific_todo(todo_id):
     else:
 
         todo_db[todo_id] = request.form.get("text") # modify the todo with ID
-        specific_todo = get_specific_todo(todo_id)[0] # get specific ToDo with ID 
-        return specific_todo, 202 # return modified todo, success
+
+        return json.dumps({"id": todo_id, "text": todo_db[todo_id]}), 202 # return modified todo, success
 
 
 
-@app.route("/todo/<int:todo_id>", methods=["DELETE"])
+@app.route("/todos/<int:todo_id>", methods=["DELETE"])
 def delete_specific_todo(todo_id):
 
     if todo_id not in todo_db.keys(): # id specified ID not in the DB
