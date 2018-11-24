@@ -154,6 +154,7 @@ def create_todo():
     :status 201: New ToDo has been created successfully. 
     :status 400: No `text` parameter was passed
     """
+    
     if "text" not in request.form.keys(): # when no "text" was passed in the body request
         return json.dumps({"error": "No text provided for the new todo!"}), 400
     
@@ -168,6 +169,17 @@ def create_todo():
 
 @app.route("/todos/<int:todo_id>", methods=["PUT"])
 def update_specific_todo(todo_id):
+    """This endpoing has been documented for other developers, so here you need to convert this documentation
+    into an a "formal" API doc (follow same format used in the previous endpoints.
+    [in other words: you need to transform this into the sphinx format and add request/response examples]
+
+    This endpoint is used to modify existing ToDos. It recieves as a URL parameter the "todo_id" which is the 
+    id of the todo we want to modify, and expects to find a `text` parameter in the request body. 
+
+    It returns error (404) if there is no ToDo corresponding with the specified ID
+    or error (400) if no `text` was provided in the request parameters
+    or success (202) if the todo is modified correctly
+    """
 
     if todo_id not in todo_db.keys(): # If the specified ID doesn't exist
         return json.dumps({"error": "ToDo not found."}), 404
@@ -185,6 +197,18 @@ def update_specific_todo(todo_id):
 
 @app.route("/todos/<int:todo_id>", methods=["DELETE"])
 def delete_specific_todo(todo_id):
+    # Todo: for this endpoint you'll have to create the `docstring` (method documentation) from scratch
+    # You can take the documentation of the previous methods as reference. The documentation for this method
+    # should be very similar to the "get_specific_todo" doc. 
+
+    #? What does this endpoint do? 
+    #?
+    #? this endpoint is used to delete a single todo, it expects the `todo_id` of the todo to delete
+    #? as a URL parameter. 
+    #?
+    #? It can return:
+    #?      error (404) - when todo with specified ID does not exist
+    #?      success (202) - when the todo is found and deleted
 
     if todo_id not in todo_db.keys(): # id specified ID not in the DB
         return json.dumps({"error": "ToDo not found."}), 404
@@ -198,6 +222,18 @@ def delete_specific_todo(todo_id):
 
 @app.route("/todos", methods=["DELETE"])
 def delete_all_todos():
+    # Todo: also for this one you'll have to create the docstring manually
+
+    #? What does this endpoint do? 
+    #?
+    #? this endpoint is used to delete all todos
+    #?
+    #? It can return:
+    #?      success (202) - when the todo DB is cleared
+    #? 
+    #? Note, this is not a very safe method so you might want to add an alert box
+    #? telling the user to be careful (see the `docs/source/directives_example.rst` for 
+    #? an exmaple of this directive)
 
     # just clear todo DB
     todo_db.clear()
