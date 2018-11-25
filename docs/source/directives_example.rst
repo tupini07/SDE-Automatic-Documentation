@@ -175,7 +175,7 @@ This directive is used to highlight code, note that we can pass the name of the 
 
 Block Messages
 **************
-
+    
 There are many different kinds:
 
     *"attention", "caution", "danger", "error", "hint", "important", "note", "tip", "warning", "admonition"*

@@ -36,7 +36,7 @@ def get_specific_todo(todo_id):
 
     **Example request:**
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         GET /todos/4278 HTTP/1.1
         Host: http://tupini07.pythonanywhere.com
@@ -45,7 +45,7 @@ def get_specific_todo(todo_id):
 
     **Example response:**
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         HTTP/1.1 200 OK
         Vary: Accept
@@ -76,7 +76,7 @@ def get_todos():
 
     **Example request**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         GET /todos HTTP/1.1
         Host: http://tupini07.pythonanywhere.com
@@ -84,7 +84,7 @@ def get_todos():
 
     **Example response**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         HTTP/1.1 200 OK
         Vary: Accept
@@ -128,7 +128,7 @@ def create_todo():
 
     **Example request**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         POST /todos HTTP/1.1
         Host: http://tupini07.pythonanywhere.com
@@ -140,7 +140,7 @@ def create_todo():
 
     **Example response**:
 
-    .. sourcecode:: http
+    .. code-block:: http
 
         HTTP/1.1 201 OK
         Vary: Accept
@@ -150,7 +150,7 @@ def create_todo():
             "id": 4393
         }
 
-    :query text: (mandatory) - The text we want to add to our new ToDo
+    :form text: (mandatory) - The text we want to add to our new ToDo
     :status 201: New ToDo has been created successfully. 
     :status 400: No `text` parameter was passed
     """
