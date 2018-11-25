@@ -175,6 +175,13 @@ This directive is used to highlight code, note that we can pass the name of the 
 
 Block Messages
 **************
+
+There are many different kinds:
+
+    *"attention", "caution", "danger", "error", "hint", "important", "note", "tip", "warning", "admonition"*
+
+As examples:
+
 .. code-block:: rst
 
     .. warning::
@@ -183,8 +190,8 @@ Block Messages
     .. note::
         This is letting you know something
 
-    .. seealso::
-        Used to add references
+    .. danger::
+        Letting you know of something dangerous
 
 .. warning::
     for example, here you are being warned
@@ -192,9 +199,8 @@ Block Messages
 .. note::
     This is letting you know something
 
-.. seealso::
-
-    Used to add references
+.. danger::
+    Letting you know of something dangerous
 
 Math
 ****
