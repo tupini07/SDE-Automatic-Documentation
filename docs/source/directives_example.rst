@@ -6,7 +6,13 @@ Ths is just a demonstration of the most common directives. For a complete list c
 Basic Directives
 ################
 
-These are directives for everyday use, mainly text formatting and similar
+These are directives for everyday use, mainly text formatting and similar.
+
+
+The Paragraph
+*************
+
+A paragraph is just a line of text. Different paragraphs are separated by a new line.
 
 
 Basic Text formatting
@@ -14,14 +20,16 @@ Basic Text formatting
 
 .. code-block:: rst
 
-    * one asterisk: *text* for emphasis (italics),
-    * two asterisks: **text** for strong emphasis (boldface), and
-    * backquotes: ``text`` for code samples.
+    one asterisk: *text* for emphasis (italics),
+    two asterisks: **text** for strong emphasis (boldface), and
+    backquotes: ``text`` for code samples.
 
 
-* one asterisk: *text* for emphasis (italics),
-* two asterisks: **text** for strong emphasis (boldface), and
-* backquotes: ``text`` for code samples.
+one asterisk: *text* for emphasis (italics),
+
+two asterisks: **text** for strong emphasis (boldface), and
+
+backquotes: ``text`` for code samples.
 
 
 Lists
