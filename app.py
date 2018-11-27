@@ -215,9 +215,9 @@ def delete_specific_todo(todo_id):
         
     else:
         todo_db.pop(todo_id) # delete specific todo
-        all_todos = get_todos() # get all todos after deleting 
 
-        return all_todos, 202
+        # return JSON representation of all todos
+        return json.dumps(list({"id": id, "text": val} for id, val in todo_db.items())), 202
 
 
 @app.route("/todos", methods=["DELETE"])
