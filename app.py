@@ -237,7 +237,7 @@ def delete_all_todos():
 
     # just clear todo DB
     todo_db.clear()
-    return "[]", 202
+    return json.dumps([]), 202
 
 
 
