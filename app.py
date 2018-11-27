@@ -108,17 +108,19 @@ def get_todos():
     """
 
     sortdir = request.args.get("sort", "asc") # Check if a `sort` get parameter was specified, if yes then use it, else use `asc`
-
+    
     if sortdir not in ["desc", "asc"]: # check that specified `sort` parameter is in the accepted set, if not return error
         return json.dumps({"error": "Sort parameter is invalid, must be either `asc` or `desc`"}), 400
 
-    # sort todos
-    ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
-    return_code = 200 if len(todo_db.keys()) > 0 else 204
+    if len(todo_db.keys()) == 0:
+        return "[]", 204
 
-    # return list of sorted todos
-    return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids)), return_code
+    else: 
+        ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
 
+        # return list of sorted todos
+        return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids)), 200
+        
 
 @app.route('/todos', methods=['POST'])
 def create_todo():
