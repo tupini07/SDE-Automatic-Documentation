@@ -112,12 +112,14 @@ def get_todos():
     if sortdir not in ["desc", "asc"]: # check that specified `sort` parameter is in the accepted set, if not return error
         return json.dumps({"error": "Sort parameter is invalid, must be either `asc` or `desc`"}), 400
 
-    # sort todos
-    ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
-    return_code = 200 if len(todo_db.keys()) > 0 else 204
+    if len(todo_db.keys()) == 0:
+        return "[]", 204
 
-    # return list of sorted todos
-    return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids)), return_code
+    else: 
+        ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
+
+        # return list of sorted todos
+        return json.dumps(list({"id": id, "text": todo_db[id]} for id in ids)), 200
 
 
 @app.route('/todos', methods=['POST'])
@@ -237,7 +239,8 @@ def delete_all_todos():
 
     # just clear todo DB
     todo_db.clear()
-    return json.dumps([]), 202
+
+    return "[]", 202
 
 
 
