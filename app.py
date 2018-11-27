@@ -103,7 +103,6 @@ def get_todos():
 
     :query sort: direction of sort, either `asc` or `desc`. Elements are sorted by `id`. Default is `asc`
     :status 200: posts found
-    :status 204: Returned when there are no todos 
     :status 400: If `sort` parameter is not valid
     """
 
@@ -112,8 +111,11 @@ def get_todos():
     if sortdir not in ["desc", "asc"]: # check that specified `sort` parameter is in the accepted set, if not return error
         return json.dumps({"error": "Sort parameter is invalid, must be either `asc` or `desc`"}), 400
 
-    if len(todo_db.keys()) == 0:
-        return "[]", 204
+
+    ######### make the response #########
+
+    if len(todo_db) == 0:
+        return "[]", 200
 
     else: 
         ids = sorted(todo_db.keys(), reverse=(sortdir == "desc"))
