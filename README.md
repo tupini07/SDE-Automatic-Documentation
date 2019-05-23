@@ -1,5 +1,7 @@
 You need `python 3.*` to work on this.
 
+You can find the slides [here](https://docs.google.com/presentation/d/1MhGBCGHhhnfmBMp_lMj5ZWqvJkmIF71fvg6K0wN4GYE/edit?usp=sharing)
+
 To install dependencies run: 
 
 ```
